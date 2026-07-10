@@ -42,11 +42,37 @@ def transform_text(text):
     return " ".join(y)
 
 # Streamlit UI
-st.set_page_config(page_title="SMS Spam Classifier", page_icon="📩")
+# Streamlit UI
+st.set_page_config(
+    page_title="SMS Spam Classifier",
+    page_icon="📩",
+    layout="centered"
+)
 
 st.title("📩 SMS Spam Classifier")
 
+st.markdown(
+    """
+    <div style="
+        padding: 15px 20px;
+        border-radius: 10px;
+        border: 1px solid #d9d9d9;
+    ">
+        <h4>Machine Learning based SMS Classification System</h4>
+        <p>
+        An NLP-powered application that uses TF-IDF vectorization
+        and Multinomial Naive Bayes to classify SMS messages as
+        spam or legitimate.
+        </p>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+st.write("")
+
 input_sms = st.text_area("Enter your message")
+
 
 if st.button("Predict"):
 
